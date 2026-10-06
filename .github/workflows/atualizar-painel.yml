@@ -1,0 +1,36 @@
+# BI-56 · Canal Suporte TOTVS
+# Baixa o CSV publicado da aba PAINEL e salva como painel.csv no repositório.
+# Só a aba PAINEL (6 colunas, sem dados pessoais) é lida aqui.
+name: Atualizar dados do painel
+
+on:
+  schedule:
+    - cron: "0 12,15,19 * * *"   # 09:00, 12:00 e 16:00 (horário de Brasília)
+  workflow_dispatch:              # botão "Run workflow" para atualizar na hora
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Baixar CSV da aba PAINEL
+        run: |
+          curl -sSL --fail -o painel.tmp "https://docs.google.com/spreadsheets/d/e/2PACX-1vSRdts_uVJG6OO6o-LZiHYEd5qqSzAZn2kIdfwEziUULhs5Qrl1UeOVMM4L5XvZswDvf-KqvSGrIvop/pub?gid=1116152843&single=true&output=csv"
+
+      - name: Validar antes de substituir (não publica arquivo quebrado)
+        run: |
+          head -1 painel.tmp | grep -q "^data_hora,protocolo,motivo,departamento,quem,status" || { echo "Cabeçalho inesperado: a aba PAINEL mudou ou o link não é da PAINEL"; exit 1; }
+          [ "$(wc -l < painel.tmp)" -ge 2 ] || { echo "CSV sem linhas de dados"; exit 1; }
+          mv painel.tmp painel.csv
+
+      - name: Salvar no repositório se houver mudança
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add painel.csv
+          git diff --cached --quiet || git commit -m "Atualiza dados do painel (BI-56)"
+          git push
