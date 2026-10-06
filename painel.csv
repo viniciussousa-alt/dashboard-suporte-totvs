@@ -1,0 +1,48 @@
+data_hora,protocolo,motivo,departamento,quem,status
+"2 de set., 2026 19h42min01s",,Dúvidas fornecedor e produto - @compras,Jurídico,Henrique Amorim Guarnieri,Solicitação Concluída
+"3 de set., 2026 17h17min02s",,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Jurídico,Henrique Amorim Guarnieri,Solicitação Concluída
+"3 de set., 2026 18h43min23s",,Dúvidas fornecedor e produto - @compras,Compras,David Casal Barbosa,Solicitação Concluída
+"7 de set., 2026 14h08min43s",1788790123,Sugestões,Jurídico,Diego Albuquerque,Solicitação Concluída
+"7 de set., 2026 18h54min30s",1788807270,Sugestões,Jurídico,Diego Albuquerque,Solicitação Concluída
+"7 de set., 2026 21h30min21s",1788816621,Sugestões,Marketing,Diego Albuquerque,Solicitação Concluída
+"8 de set., 2026 14h28min34s",1788877714,Sugestões,Jurídico,Diego Albuquerque,Solicitação Concluída
+"9 de set., 2026 14h15min38s",1788963338,Dúvidas fornecedor e produto - @compras,Recursos Humanos,Fernanda Serrador Eusebio,Solicitação Concluída
+"9 de set., 2026 18h03min04s",1788976984,Dúvidas fornecedor e produto - @compras,Compras,Jonathan Ferreira Martins,Solicitação Concluída
+"10 de set., 2026 17h26min15s",1789061175,Sugestões,Financeiro,Janaina Souza,Pendente
+"10 de set., 2026 17h35min19s",1789061719,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Operações,Alcione Barreto,Solicitação Concluída
+"10 de set., 2026 21h17min30s",1789075050,Dúvidas de centro de custo - @fin.totvs,Financeiro,Janaina Souza,Solicitação Concluída
+"11 de set., 2026 16h12min41s",1789143161,Dúvidas fornecedor e produto - @compras,Jurídico,Henrique Amorim Guarnieri,Solicitação Concluída
+"11 de set., 2026 18h41min44s",1789152104,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Operações,Luiz Martini,Solicitação Concluída
+"11 de set., 2026 18h55min31s",1789152931,Dúvida outros - @fin.totvs,Recursos Humanos,Keyla Santos,Solicitação Concluída
+"14 de set., 2026 12h06min51s",1789387611,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Operações,Vitor Silva,Solicitação Concluída
+"14 de set., 2026 13h14",1789391640,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Operações,Luiz Martini,Solicitação Concluída
+"15 de set., 2026 15h03min50s",1789484630,Dúvidas fornecedor e produto - @compras,Jurídico,Henrique Amorim Guarnieri,Solicitação Concluída
+"16 de set., 2026 17h12min33s",1789578753,Dúvidas de centro de custo - @fin.totvs,Compras,David Casal Barbosa,Solicitação Concluída
+"16 de set., 2026 17h27min40s",1789579660,Dúvidas fornecedor e produto - @compras,Compras,David Casal Barbosa,Solicitação Concluída
+"16 de set., 2026 21h54min03s",1789595643,Dúvidas fornecedor e produto - @compras,Financeiro,Amanda Chagas,Solicitação Concluída
+"18 de set., 2026 9h53min09s",1789725189,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Financeiro,Pedro Veiga,Solicitação Concluída
+"18 de set., 2026 18h40min17s",1789756817,Dúvidas fornecedor e produto - @compras,Compras,Jonathan Ferreira Martins,Solicitação Concluída
+"18 de set., 2026 19h25min08s",1789759508,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Tecnologia,Márcio Seixas,Solicitação Concluída
+"21 de set., 2026 14h12min28s",1789999948,Sugestões,Financeiro,Diego Albuquerque,Solicitação Concluída
+"21 de set., 2026 14h16min23s",1790000183,Sugestões,Produto,Diego Albuquerque,Solicitação Concluída
+"21 de set., 2026 14h57min02s",1790002622,Sugestões,Produto,Diego Albuquerque,Solicitação Concluída
+"22 de set., 2026 12h42min55s",1790080975,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Operações,Marcos Augusto,Solicitação Concluída
+"22 de set., 2026 16h45min48s",1790095548,Dúvidas fornecedor e produto - @compras,Compras,Pamela de Paula,Solicitação Concluída
+"22 de set., 2026 17h56min13s",1790099773,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Operações,Rebeca Santos,Solicitação Concluída
+"22 de set., 2026 19h57min20s",1790107040,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Jurídico,Luiz Amarante,Solicitação Concluída
+"23 de set., 2026 17h59min28s",1790186368,Dúvidas fornecedor e produto - @compras,Financeiro,Sthefani Cruz,Solicitação Concluída
+"24 de set., 2026 13h11min50s",1790255510,Dúvidas fornecedor e produto - @compras,Compras,Jonathan Ferreira Martins,Solicitação Concluída
+"24 de set., 2026 13h32min17s",1790256737,Dúvidas fornecedor e produto - @compras,Marketing,Denise Valverde,Solicitação Concluída
+"24 de set., 2026 23h46min55s",1790293615,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Operações,Anyelle Martins,Solicitação Concluída
+"25 de set., 2026 17h44min15s",1790358255,Sugestões,Jurídico,Luiz Amarante,Pendente
+"28 de set., 2026 12h32min21s",1790598741,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Operações,Adriene Pereira,Solicitação Concluída
+"28 de set., 2026 13h42min59s",1790602979,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Tecnologia,Márcio Seixas,Solicitação Concluída
+"28 de set., 2026 17h09min10s",1790615350,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Comercial,Douglas Ferrari,Pendente
+"30 de set., 2026 14h41min35s",1790779295,Dúvidas fornecedor e produto - @compras,Marketing,Denise Valverde,Solicitação Concluída
+"1º de out., 2026 18h25min44s",1790879144,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Operações,Vitor Miranda,Pendente
+"2 de out., 2026 12h47min46s",1790945266,Dúvidas fornecedor e produto - @compras,Compras,Jonathan Ferreira Martins,Pendente
+"5 de out., 2026 13h42min21s",1791207741,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Produto,Vinicius Carvalho,Solicitação Concluída
+"5 de out., 2026 15h01min44s",1791212504,Dúvidas fornecedor e produto - @compras,Produto,Vinicius Carvalho,Solicitação Concluída
+"5 de out., 2026 20h14min29s",1791231269,Dúvidas fornecedor e produto - @compras,Financeiro,Amanda Chagas,Solicitação Concluída
+"6 de out., 2026 11h38min53s",1791286733,Dúvidas fornecedor e produto - @compras,Operações,Adriene Pereira,Pendente
+"6 de out., 2026 14h46min27s",1791297987,Acessos - @sairys @Lucas Vieira @Márcio Seixas @Rafael Viana,Financeiro,Camila Salmasso,
