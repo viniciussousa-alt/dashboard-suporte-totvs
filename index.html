@@ -736,29 +736,36 @@ const MSG={
   server_unavailable:'O Google está temporariamente indisponível. Tente atualizar em instantes.',
   formato:'A planilha foi lida, mas o formato mudou. Peça ao Claude para ajustar o dashboard.'
 };
-// Lê primeiro a cópia painel.csv do repositório (gerada pelo GitHub Actions).
-// O link publicado do Google fica como reserva.
+// 1) Tenta a planilha ao vivo (link publicado da aba PAINEL).
+// 2) Se o navegador bloquear, usa a cópia painel.csv salva pelo GitHub Actions.
 async function baixarCSV(){
   const erros=[];
-  for(const url of ['painel.csv?_t='+Date.now(), CSV_URL]){
-    try{
-      const r=await fetch(url);
-      if(!r.ok){ erros.push(url.slice(0,40)+'… HTTP '+r.status); continue; }
-      const t=await r.text();
-      if(/data_hora/i.test(t.split('\n')[0])) return t;
-      erros.push(url.slice(0,40)+'… resposta sem cabeçalho da PAINEL');
-    }catch(e){ erros.push(url.slice(0,40)+'… '+(e.message||e)); }
-  }
+  try{
+    const r=await fetch(CSV_URL,{cache:'no-store'});
+    if(r.ok){ const t=await r.text(); if(/data_hora/i.test(t.split('\n')[0])) return {txt:t,fonte:'planilha'}; erros.push('planilha: resposta sem cabeçalho da PAINEL'); }
+    else erros.push('planilha: HTTP '+r.status);
+  }catch(e){ erros.push('planilha: '+(e.message||e)); }
+  try{
+    const r=await fetch('painel.csv?_t='+Date.now(),{cache:'no-store'});
+    if(r.ok){ const t=await r.text(); if(/data_hora/i.test(t.split('\n')[0])){ const lm=r.headers.get('last-modified'); return {txt:t,fonte:'copia',quando:lm?new Date(lm):null,erros}; } erros.push('cópia: sem cabeçalho'); }
+    else erros.push('cópia: HTTP '+r.status);
+  }catch(e){ erros.push('cópia: '+(e.message||e)); }
   const err=new Error('rede'); err.detalhe=erros.join(' | '); throw err;
 }
 async function carregar(forcar){
   if(carregando) return; carregando=true;
   $('btnAtualizar').disabled=true; $('icoAtualizar').className='spin'; $('status').textContent='Atualizando…';
   try{
-    const txt=await baixarCSV();
-    BASE=limpar(parseCSV(txt));
-    $('status').textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
-    $('rodape').textContent=`${BASE.length.toLocaleString('pt-BR')} solicitações na planilha · Dados atualizados automaticamente pelo GitHub Actions · Shippify`;
+    const res=await baixarCSV();
+    BASE=limpar(parseCSV(res.txt));
+    const hm=d=>d.toLocaleString('pt-BR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+    if(res.fonte==='planilha'){
+      $('status').textContent='Atualizado às '+new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})+' · direto da planilha';
+      $('rodape').textContent=`${BASE.length.toLocaleString('pt-BR')} solicitações · Fonte: planilha ao vivo (o Google pode levar até 5 min para refletir uma alteração) · Shippify`;
+    } else {
+      $('status').textContent='Cópia de '+(res.quando?hm(res.quando):'–')+' · planilha indisponível';
+      $('rodape').textContent=`${BASE.length.toLocaleString('pt-BR')} solicitações · Fonte: cópia salva pelo GitHub Actions · Detalhe: ${res.erros.join(' | ')} · Shippify`;
+    }
     mostrarAviso(''); document.body.classList.remove('stale');
     montarFiltros(); render();
   }catch(e){
